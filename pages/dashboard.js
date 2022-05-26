@@ -1,6 +1,6 @@
-import { Box, Divider, Paper, Typography } from "@mui/material";
+import { Box, Divider, Paper, Typography, Button } from "@mui/material";
 import React from "react";
-
+import Image from "next/image";
 export default function dashboard() {
   return (
     <Box
@@ -17,8 +17,57 @@ export default function dashboard() {
           width: "400px",
           height: "100vh",
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+          display:"flex",
+          flexDirection:"column"
         }}
-      ></Box>
+
+      >
+        <Box sx={{
+          display:"Flex",
+          flexDirection:"row",
+          justifyContent:"center",
+          alignItems:"center",
+          backgroundColor:"#DBDFFD"
+      }} >
+          <Image src="/pictures/pop.png" height={100} width={100} />
+          <Typography variant="h4" >Population Management </Typography>
+        </Box>
+        <Divider></Divider>
+        <Box sx={{
+          display:"flex",
+          flexDirection:"row",
+          padding:"10px",marginTop:"40px"
+        }} >
+        <Image src="/svg/dashboard.icon.svg" width={40} height={40} />
+        <Button variant="text"sx={{fontSize:"27px",color:"black",width:"300px",fontWeight:"bold"}} > DASHBOARD</Button>
+        </Box>
+        <Box sx={{
+          display:"flex",
+          flexDirection:"row",
+          padding:"10px",
+          marginBottom:"500px"
+        }} >
+        <Image src="/svg/user.svg" width={40} height={40} />
+        <Button variant="text"sx={{fontSize:"27px",color:"black",width:"300px",fontWeight:"bold"}} > ADD DATA</Button>
+        </Box>
+        <Divider></Divider>
+        <Box sx={{
+          display:"flex",
+          flexDirection:"row",
+          padding:"10px",
+        }} >
+        <Image src="/svg/logout.svg" width={40} height={40} />
+        <Button variant="text"sx={{fontSize:"27px",color:"black",width:"300px",fontWeight:"bold"}} > LOG OUT</Button>
+        </Box>
+        
+     
+      
+       
+   
+   
+
+
+      </Box>
 
       <Box
         sx={{
@@ -155,6 +204,61 @@ export default function dashboard() {
 
 
         </Box>
+        <Box
+          sx={{
+            height:"300px",
+            display:"flex",
+            flexDirection:"row",
+            alignItems:"center"
+          }}
+        >
+
+          <Paper elevation={3} sx={{
+            backgroundColor:"black",
+            width:"250px",
+            height:"150px",
+            marginLeft:"50px",
+            display:"flex",
+            flexDirection:"column",
+            padding:"10px"
+          }} >
+
+            <Typography variant="h5" sx={{
+              color:"white"
+            }} >Male</Typography>
+            <Box sx={{
+              border:"1px solid white"
+            }} ></Box>
+<Typography variant="h2" sx={{color:"white"}} >2000</Typography>`
+
+
+          </Paper>
+          <Paper elevation={3} sx={{
+            backgroundColor:"pink",
+            width:"250px",
+            height:"150px",
+            marginLeft:"50px",
+            display:"flex",
+            flexDirection:"column",
+            padding:"10px"
+          }} >
+
+            <Typography variant="h5" sx={{
+              color:"white"
+            }} >Female</Typography>
+            <Box sx={{
+              border:"1px solid white"
+            }} ></Box>
+<Typography variant="h2" sx={{color:"white"}} >2599</Typography>`
+
+
+          </Paper>
+
+        
+
+
+        </Box>
+        
       </Box>
     </Box>
   );
