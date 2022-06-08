@@ -9,7 +9,10 @@ import Image from "next/image";
 
 export default function SignIn() {
   return (
-     <div>hejdjh</div>
+     <Box>
+
+        <div>jhwejwe</div>
+     </Box>
 
   )
   }

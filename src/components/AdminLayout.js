@@ -34,6 +34,11 @@ const  setDrawerOpen = () => {
 const  handleClose = () => {
   setopen(false);
 }
+const drawerGoToPage = (url) =>{
+  setopen(false);
+  router.push(url);
+}
+
   return (
     
     // full screen
@@ -97,7 +102,7 @@ const  handleClose = () => {
             </Box>
             <Divider/>
              {/* BUTTONS */}
-            <ListItem button onClick={()=> router.push("/dashboard") } >
+            <ListItem button onClick={()=> drawerGoToPage ("/dashboard")} selected={router.pathname.includes("dashboard")} >
               <ListItemIcon>
                 <Image
                   src="/svg/dashboard.icon.svg"
@@ -122,7 +127,7 @@ const  handleClose = () => {
                   </ListItemText>
             </ListItem>
 
-            <ListItem button onClick={()=> router.push("/addrecord") } >
+            <ListItem button onClick={()=> drawerGoToPage ("/addrecord") } selected={router.pathname.includes("addrecord")} >
               <ListItemIcon>
               <Image
                   src="/svg/database.svg"
@@ -143,7 +148,7 @@ const  handleClose = () => {
             </Typography>
             </ListItem>
 
-            <ListItem button onClick={()=> router.push("/about") } >
+            <ListItem button onClick={()=> drawerGoToPage ("/about") } selected={router.pathname.includes("about")} >
               <ListItemIcon>
               <Image
                   src="/svg/about-icon.svg"

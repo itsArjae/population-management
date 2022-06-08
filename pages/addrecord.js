@@ -1,11 +1,30 @@
 import { Box, Divider, Paper, Typography, Button, TextField, Autocomplete, Stack } from "@mui/material";
 //import Autocomplete from '@mui/material/Autocomplete';
-import React from 'react'
+import React, { useState } from 'react'
+import Axios from 'axios';
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
+
 import AdminLayout from '../src/components/AdminLayout';
 export default function Addrecord() {
+  const [fname, setFname] = useState("");
+  const [mname, setMname] = useState("");
+  const [sname, setSname] = useState("");
+  const [age, setAge] = useState(0);
+  const [contact, setContact] = useState("");
+  const [voter, setVoter] = useState();
+
+  const newRecord = () => {
+      Axios.post("localhost:5000/api/create", {
+          fname: fname,
+          mname: mname,
+          sname: sname,
+          age: age,
+          contact: contact,
+          voter: voter,
+      });
+  };
 
     const defaultProps = {
       options: top100Films,
@@ -29,7 +48,7 @@ export default function Addrecord() {
       }}
     >
    
-
+     
       <Box
         sx={{
           width: "100vw",
