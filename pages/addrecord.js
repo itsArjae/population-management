@@ -13,8 +13,15 @@ export default function Addrecord() {
   const [sname, setSname] = useState("");
   const [age, setAge] = useState(0);
   const [contact, setContact] = useState("");
-  const [voter, setVoter] = useState();
+  const [voter, setVoter] = useState("");
 
+
+const display = () => {
+setVoter(document.getElementById("cars").value.toString())
+console.log(fname+mname+sname+age+contact+voter);
+};
+
+  /*
   const newRecord = () => {
       Axios.post("localhost:5000/api/create", {
           fname: fname,
@@ -23,8 +30,10 @@ export default function Addrecord() {
           age: age,
           contact: contact,
           voter: voter,
-      });
-  };
+      }).then(()=> {
+          console.log("success");
+      })
+  };*/
 
     const defaultProps = {
       options: top100Films,
@@ -78,9 +87,15 @@ export default function Addrecord() {
            paddingLeft:"50px"
          }} >
 
-<TextField id="standard-basic" label="SURNAME" variant="outlined" sx={{marginRight:"30px"}}/>
-<TextField id="standard-basic" label="FIRST NAME" variant="outlined" sx={{marginRight:"30px"}}/>
-<TextField id="standard-basic" label="MIDDLE NAME" variant="outlined" sx={{marginRight:"30px"}}/>
+<TextField id="standard-basic" label="SURNAME" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
+  setSname(event.target.value);
+}} />
+<TextField id="standard-basic" label="FIRST NAME" variant="outlined" sx={{marginRight:"30px" }} onChange={(event) => {
+  setFname(event.target.value);
+}} />
+<TextField id="standard-basic" label="MIDDLE NAME" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
+  setMname(event.target.value);
+}}/>
 
 
          </Box>
@@ -95,24 +110,28 @@ export default function Addrecord() {
     paddingLeft:"50px"
   }} >
 
-<TextField id="standard-basic" type="number" label="AGE" variant="outlined" sx={{marginRight:"30px"}}/>
-<TextField id="standard-basic" type="number" label="CONTACT" variant="outlined" sx={{marginRight:"30px"}}/>
+<TextField id="standard-basic" type="number" label="AGE" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
+  setAge(event.target.value);
+}}/>
+<TextField id="standard-basic" type="number" label="CONTACT" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
+  setContact(event.target.value);
+}} />
 
 
-<Autocomplete
-        
-        id="disable-close-on-select"
-        {...defaultProps}
-        options={top100Films}
-        disableCloseOnSelect
-        renderInput={(params) => (
-          <TextField {...params} label="ARE YOU A VOTER?" variant="standard" sx={{width:"300px", marginTop:"50px"}} />
-        )}
-      />
+<label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars" onChange={(event) => {
+  setVoter(event.target.value);
+}}  >
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
      
 
   </Box>
-         <Button variant="outlined" sx={{marginTop:"100px"}} >CONFIRM</Button>
+         <Button onClick={display} variant="outlined" sx={{marginTop:"100px"}} >CONFIRM</Button>
 
        </Paper>
   
@@ -128,7 +147,7 @@ Addrecord.getLayout = function getLayout(page) {
 };
 
 const top100Films = [
-  { title: 'VOTER', result: 'true' },
-  { title: 'NON VOTER', result: 'true'},
+  { title: 'VOTER', result: "NON VOTER"},
+  { title: 'NON VOTER', result: "'NON VOTER'"},
  
 ];

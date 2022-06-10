@@ -1,12 +1,16 @@
 import { Box, Divider, Paper, Typography, Button } from "@mui/material";
 
 import React, { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 import AdminLayout from "../src/components/AdminLayout";
 const Dashboard = () => {
   const [data, setData] = useState([]);
+ var name = [];
+
+
   useEffect(() => {
     getUsers();
   }, []);
@@ -16,14 +20,30 @@ const getUsers = async () => {
 
   if(response.status === 200){
     setData(response.data);
+
   }
   else{
     console.log("ayaw");
   }
 
 };
+useEffect(() => {
+  getData();
+}, []);
 
-console.log("data=>", data);
+
+const getData = async () => {
+data && data.map((item, index) => {
+ name=item.name;
+
+
+} )};
+
+
+
+
+
+console.log("data=>", data.fname);
 
 console.log("hello");
   return (
@@ -223,7 +243,7 @@ console.log("hello");
           <Paper
             elevation={3}
             sx={{
-              backgroundColor: "black",
+              backgroundColor: "violet",
               width: "300px",
               height: "150px",
               marginLeft: "100px",
@@ -238,7 +258,7 @@ console.log("hello");
                 color: "white",
               }}
             >
-              Male
+              PWD
             </Typography>
             <Box
               sx={{
@@ -253,7 +273,7 @@ console.log("hello");
           <Paper
             elevation={3}
             sx={{
-              backgroundColor: "pink",
+              backgroundColor: "orange",
               width: "300px",
               height: "150px",
               marginLeft: "100px",
@@ -268,7 +288,7 @@ console.log("hello");
                 color: "white",
               }}
             >
-              Female
+              Students
             </Typography>
             <Box
               sx={{

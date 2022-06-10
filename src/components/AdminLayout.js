@@ -168,7 +168,7 @@ const drawerGoToPage = (url) =>{
               ABOUT US
             </Typography>
             </ListItem>
-
+              <Divider></Divider>
             <ListItem button>
               <ListItemIcon>
                 <Image
