@@ -168,7 +168,51 @@ const drawerGoToPage = (url) =>{
               ABOUT US
             </Typography>
             </ListItem>
-              <Divider></Divider>
+            <ListItem button onClick={()=> drawerGoToPage ("/list") } selected={router.pathname.includes("list")} >
+              <ListItemIcon>
+                <Image
+                  src="/svg/list-icon.svg"
+                  alt="about"
+                  width={20}
+                  height={20}
+                />
+              </ListItemIcon>
+              <Typography
+              variant="h2"
+              sx={{
+                fontSize: "20px",
+                fontFamily: "Times New Roman",
+
+              }}
+            >
+              LIST
+            </Typography>
+            </ListItem>
+
+
+
+            <Divider sx={{marginTop:"200px"}} ></Divider>
+            <ListItem button onClick={()=> drawerGoToPage ("/devinfo") } selected={router.pathname.includes("devinfo")} >
+              <ListItemIcon>
+                <Image
+                  src="/svg/dev-icon.svg"
+                  alt="about"
+                  width={20}
+                  height={20}
+                />
+              </ListItemIcon>
+              <Typography
+              variant="h2"
+              sx={{
+                fontSize: "20px",
+                fontFamily: "Times New Roman",
+
+              }}
+            >
+              DEV INFO
+            </Typography>
+            </ListItem>
+              <Divider ></Divider>
             <ListItem button onClick={()=> drawerGoToPage ("/sign-in") } selected={router.pathname.includes("sign-in")} >
               <ListItemIcon>
                 <Image
@@ -189,7 +233,7 @@ const drawerGoToPage = (url) =>{
               LOG OUT
             </Typography>
             </ListItem>
-
+            <Divider ></Divider>
           </List>
         </Box>
       </Drawer>

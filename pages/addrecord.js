@@ -124,7 +124,51 @@ console.log(fname+mname+sname+age+contact+voter);
      
 
   </Box>
-         <Button onClick={display} variant="outlined" sx={{marginTop:"100px"}} >CONFIRM</Button>
+  
+  <Box sx={{
+    
+    height:"100px",
+    width:"900px",
+    dispplay:"flex",
+    flexDirection:"row",
+    justifyContent:"center",
+    marginTop:"50px",
+    paddingLeft:"50px"
+  }} >
+
+<TextField id="standard-basic" type="text" label="EMPLOYMENT" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
+  setAge(event.target.value);
+}}/>
+<TextField id="standard-basic" type="text" label="PERMANENT ADDRESS" variant="outlined" sx={{marginRight:"30px", width:"480px"}} onChange={(event) => {
+  setAge(event.target.value);
+}}/>
+
+
+     
+
+  </Box>
+
+    
+  <Box sx={{
+    
+    height:"100px",
+    width:"900px",
+    dispplay:"flex",
+    flexDirection:"row",
+    justifyContent:"center",
+    marginTop:"50px",
+    paddingLeft:"50px"
+  }} >
+
+<TextField id="standard-basic" type="text" label="GENDER(Male/Female)" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
+  setAge(event.target.value);
+}}/>
+
+
+     
+
+  </Box>
+         <Button onClick={display} variant="outlined" sx={{marginTop:"50px", width:"300px" }} >CONFIRM</Button>
 
        </Paper>
   
