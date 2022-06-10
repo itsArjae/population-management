@@ -116,18 +116,11 @@ console.log(fname+mname+sname+age+contact+voter);
 <TextField id="standard-basic" type="number" label="CONTACT" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
   setContact(event.target.value);
 }} />
-
-
-<label for="cars">Choose a car:</label>
-
-<select name="cars" id="cars" onChange={(event) => {
+<TextField id="standard-basic" type="text" label="VOTER(Yes/No)" variant="outlined" sx={{marginRight:"30px"}} onChange={(event) => {
   setVoter(event.target.value);
-}}  >
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
+}} />
+
+
      
 
   </Box>

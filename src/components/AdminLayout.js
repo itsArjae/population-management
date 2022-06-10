@@ -169,7 +169,7 @@ const drawerGoToPage = (url) =>{
             </Typography>
             </ListItem>
               <Divider></Divider>
-            <ListItem button>
+            <ListItem button onClick={()=> drawerGoToPage ("/sign-in") } selected={router.pathname.includes("sign-in")} >
               <ListItemIcon>
                 <Image
                   src="/svg/logout.svg"

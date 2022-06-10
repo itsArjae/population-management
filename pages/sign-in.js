@@ -4,14 +4,59 @@ import { Box } from "@mui/system";
 import React from "react";
 import AdminLayout from '../src/components/AdminLayout';
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 
 
 export default function SignIn() {
+   const router = useRouter();
+   const goto = () => {
+      router.push("/dashboard");
+   };
   return (
      <Box>
+  <Box
+      sx={{
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    
+      }}
+    >
+      <Box>
+        <Image src="/pictures/pop.png" width={700} height={700}/>
+      </Box>
 
-        <div>jhwejwe</div>
+      <Paper
+        eleveation={5}
+        sx={{
+          width: "400px",
+          height: "500px",
+          boxShadow:"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
+          marginLeft:"200px",
+          display:"flex",
+          alignItems:"center",
+          justifyContent:"center",
+          flexDirection:"column"
+        }}
+        
+      >
+        <Box>
+          <Image src="/svg/user.svg" height={100} width={100}  ></Image>
+        </Box>
+<TextField id="filled-basic" label="Admin Username" variant="filled" />
+
+<TextField id="filled-basic" label="Admin Password" variant="filled" sx={{
+  marginTop:"50px",
+  marginBottom:"50px"
+}} />
+
+<Button variant="contained" onClick={goto}  >Login</Button>
+
+
+      </Paper>
+    </Box>
      </Box>
 
   )
